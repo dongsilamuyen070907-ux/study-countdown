@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Study Countdown</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ffd6ec,#e3d7ff);
+font-family:'Pacifico',cursive;
+overflow:hidden;
+}
+
+/* title */
+
+.title{
+position:absolute;
+top:50px;
+font-size:40px;
+color:#ff69b4;
+}
+/* clock */
+
+#clock{
+font-family:'Orbitron',monospace;
+font-size:8vw;
+color:#ff4fa3;
+background:white;
+padding:40px 80px;
+border-radius:30px;
+box-shadow:0 10px 30px rgba(176, 4, 122, 0.2);
+}
+
+/* select */
+
+.timeSelect{
+position:absolute;
+top:140px;
+}
+
+.timeSelect select{
+padding: 15px 20px;
+border-radius: 15px;
+border:none;
+color:#9d0e53;
+background:#ff9ed2;
+font-size:16px;
+}
+
+/* pause counter */
+
+#pauseBoard{
+position:absolute;
+top:30px;
+right:30px;
+font-family:'Orbitron';
+color:#9d0e53;
+background:rgb(238, 138, 190);
+padding:10px 20px;
+border-radius:15px;
+}
+
+/* warning */
+
+#warning{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:6vw;
+color:#c10047;
+display:none;
+}
+
+/* buttons */
+
+.controls{
+position:absolute;
+bottom:60px;
+}
+
+button{
+padding:15px 30px;
+margin:10px;
+font-size:18px;
+border:none;
+border-radius:20px;
+cursor:pointer;
+}
+
+.start{background:#ff9ed2;}
+.pause{background:#ff6b8b;color:white;}
+.restart{background:#bfa6ff;color:white;}
+
+/* floating hearts */
+
+.heart{
+position:fixed;
+bottom:-50px;
+animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+from{
+transform:translateY(0);
+opacity:1;
+}
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="title">Evelyn is watching you 👀</div>
+
+<div id="clock">05:00:00</div>
+
+<div class="timeSelect">
+<select id="timeOption">
+<option value="2">2 hours</option>
+<option value="3">3 hours</option>
+<option value="5" selected>5 hours</option>
+</select>
+</div>
+
+<div id="pauseBoard">Pause: 0</div>
+
+<div id="warning">⚠ I KNOW YOU ARE LAZY ⚠</div>
+
+<div class="controls">
+<button class="start" onclick="startTimer()">START</button>
+<button class="pause" onclick="pauseTimer()">PAUSE</button>
+<button class="restart" onclick="restartTimer()">RESTART</button>
+</div>
+
+<script src="soundcheckk.js"></script>
+
+</body>
+</html>
